@@ -50,8 +50,10 @@ namespace Tron.Game.Scripting
                 direction = new Point(0, Constants.CELL_SIZE);
             }
 
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            snake.TurnHead(direction);
+            Player player1 = (Player)cast.GetFirstActor("player1");
+            Player player2 = (Player)cast.GetFirstActor("player2");
+            player1.TurnHead(direction);
+            player2.TurnHead(direction);
 
         }
     }

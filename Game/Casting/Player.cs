@@ -5,8 +5,8 @@ using System.Linq;
 namespace Tron.Game.Casting
 {
     /// <summary>
-    /// <para>A long limbless reptile.</para>
-    /// <para>The responsibility of Snake is to move itself.</para>
+    /// <para>A tron racer.</para>
+    /// <para>Tron makes .</para>
     /// </summary>
     public class Player : Actor
     {
@@ -103,7 +103,7 @@ namespace Tron.Game.Casting
             int x = Constants.MAX_X / 2;
             int y = Constants.MAX_Y / 2;
 
-            for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
+            for (int i = 0; i < Constants.PLAYER_LENGTH; i++)
             {
                 Point position = new Point(x - i * Constants.CELL_SIZE, y);
                 Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
