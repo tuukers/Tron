@@ -15,9 +15,9 @@ namespace Tron.Game.Casting
         /// <summary>
         /// Constructs a new instance of a Snake.
         /// </summary>
-        public Player()
+        public Player(int player_num)
         {
-            PrepareBody();
+            PrepareBody(player_num);
         }
 
         /// <summary>
@@ -98,15 +98,15 @@ namespace Tron.Game.Casting
         /// <summary>
         /// Prepares the snake body for moving.
         /// </summary>
-        private void PrepareBody()
+        private void PrepareBody(int player_num)
         {
-            int x = Constants.MAX_X / 2;
-            int y = Constants.MAX_Y / 2;
+            int x = Constants.MAX_X*player_num / 3;
+            int y = Constants.MAX_Y/ 2;
 
             for (int i = 0; i < Constants.PLAYER_LENGTH; i++)
             {
-                Point position = new Point(x - i * Constants.CELL_SIZE, y);
-                Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
+                Point position = new Point(x , y - i * Constants.CELL_SIZE);
+                Point velocity = new Point(0,1 * Constants.CELL_SIZE);
                 string text = i == 0 ? "8" : "#";
                 Color color = i == 0 ? Constants.YELLOW : Constants.GREEN;
 

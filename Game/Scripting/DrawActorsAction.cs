@@ -28,15 +28,13 @@ namespace Tron.Game.Scripting
             Player player2 = (Player)cast.GetFirstActor("player2");
             List<Actor> segments1 = player1.GetSegments();
             List<Actor> segments2 = player2.GetSegments();
-            Actor score = cast.GetFirstActor("score");
-            Actor food = cast.GetFirstActor("food");
+            Actor winner = cast.GetFirstActor("winner");
             List<Actor> messages = cast.GetActors("messages");
             
             videoService.ClearBuffer();
             videoService.DrawActors(segments1);
             videoService.DrawActors(segments2);
-            videoService.DrawActor(score);
-            videoService.DrawActor(food);
+            videoService.DrawActor(winner);
             videoService.DrawActors(messages);
             videoService.FlushBuffer();
         }

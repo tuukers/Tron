@@ -9,14 +9,14 @@ namespace Tron.Game.Casting
     /// The responsibility of Food is to select a random position and points that it's worth.
     /// </para>
     /// </summary>
-    public class Score : Actor
+    public class Winner : Actor
     {
         private int points = 0;
 
         /// <summary>
         /// Constructs a new instance of an Food.
         /// </summary>
-        public Score()
+        public Winner()
         {
             AddPoints(0);
         }

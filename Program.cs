@@ -19,9 +19,9 @@ namespace Tron
         {
             // create the cast
             Cast cast = new Cast();
-            cast.AddActor("food", new Food());
-            cast.AddActor("snake", new Snake());
-            cast.AddActor("score", new Score());
+            cast.AddActor("winner", new Winner());
+            cast.AddActor("player1", new Player(1));
+            cast.AddActor("player2", new Player(2));
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
