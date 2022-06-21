@@ -17,6 +17,8 @@ namespace Tron.Game.Scripting
     public class HandleCollisionsAction : Action
     {
         private bool isGameOver = false;
+        private bool player1Win = false;
+        private bool player2Win = false;
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -76,7 +78,9 @@ namespace Tron.Game.Scripting
             int x = Constants.MAX_X / 2;
             int y = Constants.MAX_Y / 2;
             Point position = new Point(x, y);
-
+            
+            
+            
             if (isGameOver == false)
             {
                 foreach (Actor segment in body1)
@@ -84,19 +88,14 @@ namespace Tron.Game.Scripting
                     if (segment.GetPosition().Equals(head1.GetPosition()))
                     {
                         isGameOver = true;
-
-                        Actor message = new Actor();
-                        message.SetText("Player 2 Wins!!!");
-                        message.SetPosition(position);
-                        cast.AddActor("messages", message);
+                        
+                        player2Win = true;
                     }
                     if (segment.GetPosition().Equals(head2.GetPosition()))
                     {
                         isGameOver = true;
-                        Actor message = new Actor();
-                        message.SetText("Player 1 Wins!!!");
-                        message.SetPosition(position);
-                        cast.AddActor("messages", message);
+
+                        player1Win = true;
                     }
                 }
                 foreach (Actor segment in body2)
@@ -104,21 +103,17 @@ namespace Tron.Game.Scripting
                     if (segment.GetPosition().Equals(head1.GetPosition()))
                     {
                         isGameOver = true;
-                        Actor message = new Actor();
-                        message.SetText("Player 2 Wins!!!");
-                        message.SetPosition(position);
-                        cast.AddActor("messages", message);
+                        player2Win = true;
                     }
                     if (segment.GetPosition().Equals(head2.GetPosition()))
                     {
                         isGameOver = true;
-                        Actor message = new Actor();
-                        message.SetText("Player 1 Wins!!");
-                        message.SetPosition(position);
-                        cast.AddActor("messages", message);
+                        player1Win = true;
+            
                     }
                 }
             }
+            
         }
 
         private void HandleGameOver(Cast cast)
@@ -139,6 +134,38 @@ namespace Tron.Game.Scripting
                 // message.SetText("Game Over!");
                 // message.SetPosition(position);
                 // cast.AddActor("messages", message);
+
+                if (player1Win==true)
+                {
+                    if (player2Win== true)
+                    {
+                        Actor message = new Actor();
+                        message.SetText("Tie Game!!!");
+                        message.SetPosition(position);
+                        cast.AddActor("messages", message);
+                    }
+                    else
+                    {
+                        Actor message = new Actor();
+                        message.SetText("Player 1 Wins!!");
+                        message.SetPosition(position);
+                        cast.AddActor("messages", message);
+                    }
+                }
+                else if(player2Win == true)
+                {
+                    Actor message = new Actor();
+                    message.SetText("Player 2 Wins!!");
+                    message.SetPosition(position);
+                    cast.AddActor("messages", message);
+                }
+                else
+                {
+                    Actor message = new Actor();
+                    message.SetText("Error no winner");
+                    message.SetPosition(position);
+                    cast.AddActor("messages", message);
+                }
 
                 // make everything white
                 foreach (Actor segment in segments1)
