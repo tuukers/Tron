@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ethan\\OneDrive\\Desktop\\CSE 210\\cse210-student-articulate-csharp-complete-main (1)\\Fixed Version\\cse210-student-articulate-csharp-complete\\Unit05\\Unit05.csproj": {}
+    "C:\\Users\\ethan\\Documents\\CSE 210\\Tron\\Unit05.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ethan\\OneDrive\\Desktop\\CSE 210\\cse210-student-articulate-csharp-complete-main (1)\\Fixed Version\\cse210-student-articulate-csharp-complete\\Unit05\\Unit05.csproj": {
+    "C:\\Users\\ethan\\Documents\\CSE 210\\Tron\\Unit05.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ethan\\OneDrive\\Desktop\\CSE 210\\cse210-student-articulate-csharp-complete-main (1)\\Fixed Version\\cse210-student-articulate-csharp-complete\\Unit05\\Unit05.csproj",
+        "projectUniqueName": "C:\\Users\\ethan\\Documents\\CSE 210\\Tron\\Unit05.csproj",
         "projectName": "Unit05",
-        "projectPath": "C:\\Users\\ethan\\OneDrive\\Desktop\\CSE 210\\cse210-student-articulate-csharp-complete-main (1)\\Fixed Version\\cse210-student-articulate-csharp-complete\\Unit05\\Unit05.csproj",
+        "projectPath": "C:\\Users\\ethan\\Documents\\CSE 210\\Tron\\Unit05.csproj",
         "packagesPath": "C:\\Users\\ethan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ethan\\OneDrive\\Desktop\\CSE 210\\cse210-student-articulate-csharp-complete-main (1)\\Fixed Version\\cse210-student-articulate-csharp-complete\\Unit05\\obj\\",
+        "outputPath": "C:\\Users\\ethan\\Documents\\CSE 210\\Tron\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ethan\\AppData\\Roaming\\NuGet\\NuGet.Config"
