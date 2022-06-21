@@ -11,7 +11,7 @@ namespace Tron.Game.Scripting
     /// <para>An update action that handles interactions between the actors.</para>
     /// <para>
     /// The responsibility of HandleCollisionsAction is to handle the situation when the snake 
-    /// collides with the food, or the snake collides with its segments, or the game is over.
+    /// collides with its segments, or the game is over.
     /// </para>
     /// </summary>
     public class HandleCollisionsAction : Action
@@ -30,30 +30,10 @@ namespace Tron.Game.Scripting
         {
             if (isGameOver == false)
             {
-                //HandleFoodCollisions(cast);
                 HandleSegmentCollisions(cast);
                 HandleGameOver(cast);
             }
         }
-
-        /// <summary>
-        /// Updates the score nd moves the food if the snake collides with it.
-        /// </summary>
-        /// <param name="cast">The cast of actors.</param>
-        // private void HandleFoodCollisions(Cast cast)
-        // {
-        //     Snake snake = (Snake)cast.GetFirstActor("snake");
-        //     Score score = (Score)cast.GetFirstActor("score");
-        //     Food food = (Food)cast.GetFirstActor("food");
-            
-        //     if (snake.GetHead().GetPosition().Equals(food.GetPosition()))
-        //     {
-        //         int points = food.GetPoints();
-        //         snake.GrowTail(points);
-        //         score.AddPoints(points);
-        //         food.Reset();
-        //     }
-        // }
 
         /// <summary>
         /// Sets the game over flag if the snake collides with one of its segments.
@@ -124,7 +104,6 @@ namespace Tron.Game.Scripting
                 Player player1 = (Player)cast.GetFirstActor("player1");
                 List<Actor> segments1 = player1.GetSegments();
                 List<Actor> segments2 = player2.GetSegments();
-                //Food food = (Food)cast.GetFirstActor("food");
 
                 // create a "game over" message
                 int x = Constants.MAX_X / 2;
@@ -145,7 +124,6 @@ namespace Tron.Game.Scripting
                 {
                     segment.SetColor(Constants.WHITE);
                 }
-                //food.SetColor(Constants.WHITE);
             }
         }
 
