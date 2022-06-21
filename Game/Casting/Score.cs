@@ -6,7 +6,7 @@ namespace Tron.Game.Casting
     /// <summary>
     /// <para>A tasty item that snakes like to eat.</para>
     /// <para>
-    /// The responsibility of Food is to select a random position and points that it's worth.
+    /// The responsibility of Winner is to add points for a player if they win a round.
     /// </para>
     /// </summary>
     public class Winner : Actor
@@ -14,11 +14,11 @@ namespace Tron.Game.Casting
         private int points = 0;
 
         /// <summary>
-        /// Constructs a new instance of an Food.
+        /// Constructs a new instance of Winner.
         /// </summary>
         public Winner()
         {
-            AddPoints(0);
+            AddPoints(1);
         }
 
         /// <summary>
@@ -28,7 +28,6 @@ namespace Tron.Game.Casting
         public void AddPoints(int points)
         {
             this.points += points;
-            SetText($"Score: {this.points}");
         }
     }
 }
