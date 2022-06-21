@@ -11,7 +11,7 @@ namespace Tron.Game.Scripting
     /// <para>An update action that handles interactions between the actors.</para>
     /// <para>
     /// The responsibility of HandleCollisionsAction is to handle the situation when the snake 
-    /// collides with the food, or the snake collides with its segments, or the game is over.
+    /// collides with its segments, or the game is over.
     /// </para>
     /// </summary>
     public class HandleCollisionsAction : Action
@@ -30,13 +30,17 @@ namespace Tron.Game.Scripting
         {
             if (isGameOver == false)
             {
+<<<<<<< HEAD
                 Growth(cast);
+=======
+>>>>>>> a61560c184f4a295853b9f16365471da98cb0bd3
                 HandleSegmentCollisions(cast);
                 HandleGameOver(cast);
             }
         }
 
         /// <summary>
+<<<<<<< HEAD
         /// Updates the score nd moves the food if the snake collides with it.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
@@ -59,6 +63,8 @@ namespace Tron.Game.Scripting
         }
 
         /// <summary>
+=======
+>>>>>>> a61560c184f4a295853b9f16365471da98cb0bd3
         /// Sets the game over flag if the snake collides with one of its segments.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
@@ -127,7 +133,6 @@ namespace Tron.Game.Scripting
                 Player player1 = (Player)cast.GetFirstActor("player1");
                 List<Actor> segments1 = player1.GetSegments();
                 List<Actor> segments2 = player2.GetSegments();
-                //Food food = (Food)cast.GetFirstActor("food");
 
                 // create a "game over" message
                 int x = Constants.MAX_X / 2;
@@ -148,7 +153,6 @@ namespace Tron.Game.Scripting
                 {
                     segment.SetColor(Constants.WHITE);
                 }
-                //food.SetColor(Constants.WHITE);
             }
         }
 

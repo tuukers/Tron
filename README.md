@@ -1,8 +1,7 @@
-# Robot Finds Kitten
-Simon Carless once described robotfindskitten as "less a game and more a way of 
-life ... It's fun to wander around until you find a kitten, at which point you feel 
-happy and can start again". I don't think I could have said it better myself!
-
+# TRON or Cycle
+Two players compete in a classic game of Tron. Each player controls a
+bike, and they must maneuver to cut off the other player with their trail,
+while avoiding their own.
 ---
 ## Getting Started
 Make sure you have dotnet 6.0 or newer installed on your machine. Open 
@@ -23,9 +22,10 @@ The project files and folders are organized as follows:
 ```
 root                    (project root folder)
 +-- Game                (source code folder)
++-- Constants.cs        (Game setup attributes)
 +-- Program.cs          (program entry point)    
 +-- README.md           (general info)
-+-- Unit04.csproj       (dotnet project file)
++-- Unit05.csproj       (dotnet project file)
 ```
 
 ## Required Technologies
@@ -33,5 +33,8 @@ root                    (project root folder)
 * raylib-cs 3.7.0.1
 
 ## Authors
-* Matt Manley (manleym@byui.edu)
-* Scott Burton (burtons@byui.edu)
+* Ethan Graham - gra20072@byui.edu
+* Ryan Madsen - mad19002@byui.edu
+* Colby Hale - hal19029@byui.edu 
+* Diego Baeza - bae18003@byui.edu 
+* Ryan Funk - fun20009@byui.edu
