@@ -30,17 +30,14 @@ namespace Tron.Game.Scripting
         {
             if (isGameOver == false)
             {
-<<<<<<< HEAD
                 Growth(cast);
-=======
->>>>>>> a61560c184f4a295853b9f16365471da98cb0bd3
                 HandleSegmentCollisions(cast);
                 HandleGameOver(cast);
             }
         }
 
         /// <summary>
-<<<<<<< HEAD
+
         /// Updates the score nd moves the food if the snake collides with it.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
@@ -63,8 +60,7 @@ namespace Tron.Game.Scripting
         }
 
         /// <summary>
-=======
->>>>>>> a61560c184f4a295853b9f16365471da98cb0bd3
+
         /// Sets the game over flag if the snake collides with one of its segments.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
