@@ -13,7 +13,8 @@ namespace Tron.Game.Scripting
     public class ControlActorsAction : Action
     {
         private KeyboardService keyboardService;
-        private Point direction = new Point(Constants.CELL_SIZE, 0);
+        private Point direction = new Point(0,-Constants.CELL_SIZE);
+        private Point direction2 = new Point(0,-Constants.CELL_SIZE);
 
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
@@ -50,10 +51,34 @@ namespace Tron.Game.Scripting
                 direction = new Point(0, Constants.CELL_SIZE);
             }
 
+            // left
+            if (keyboardService.IsKeyDown("j"))
+            {
+                direction2 = new Point(-Constants.CELL_SIZE, 0);
+            }
+
+            // right
+            if (keyboardService.IsKeyDown("l"))
+            {
+                direction2 = new Point(Constants.CELL_SIZE, 0);
+            }
+
+            // up
+            if (keyboardService.IsKeyDown("i"))
+            {
+                direction2 = new Point(0, -Constants.CELL_SIZE);
+            }
+
+            // down
+            if (keyboardService.IsKeyDown("k"))
+            {
+                direction2 = new Point(0, Constants.CELL_SIZE);
+            }
+
             Player player1 = (Player)cast.GetFirstActor("player1");
             Player player2 = (Player)cast.GetFirstActor("player2");
             player1.TurnHead(direction);
-            player2.TurnHead(direction);
+            player2.TurnHead(direction2);
 
         }
     }
