@@ -4,7 +4,7 @@ using System;
 namespace Tron.Game.Casting
 {
     /// <summary>
-    /// <para>A tasty item that snakes like to eat.</para>
+    /// <para>The number of times a player wins the game.</para>
     /// <para>
     /// The responsibility of Winner is to add points for a player if they win a round.
     /// </para>
