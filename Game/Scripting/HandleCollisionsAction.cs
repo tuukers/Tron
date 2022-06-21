@@ -30,7 +30,7 @@ namespace Tron.Game.Scripting
         {
             if (isGameOver == false)
             {
-                //HandleFoodCollisions(cast);
+                Growth(cast);
                 HandleSegmentCollisions(cast);
                 HandleGameOver(cast);
             }
@@ -40,20 +40,23 @@ namespace Tron.Game.Scripting
         /// Updates the score nd moves the food if the snake collides with it.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
-        // private void HandleFoodCollisions(Cast cast)
-        // {
-        //     Snake snake = (Snake)cast.GetFirstActor("snake");
-        //     Score score = (Score)cast.GetFirstActor("score");
-        //     Food food = (Food)cast.GetFirstActor("food");
+
+        private void Growth(Cast cast)
+        {
+            Player player1 = (Player)cast.GetFirstActor("player1");
+            Player player2 = (Player)cast.GetFirstActor("player2");
+            //Score score = (Score)cast.GetFirstActor("score");
+            //Food food = (Food)cast.GetFirstActor("food");
             
-        //     if (snake.GetHead().GetPosition().Equals(food.GetPosition()))
-        //     {
-        //         int points = food.GetPoints();
-        //         snake.GrowTail(points);
-        //         score.AddPoints(points);
-        //         food.Reset();
-        //     }
-        // }
+            
+            
+            int points = 1;
+            player1.GrowTail(points,1);
+            player2.GrowTail(points,2);
+            //score.AddPoints(points);
+            //food.Reset();
+            
+        }
 
         /// <summary>
         /// Sets the game over flag if the snake collides with one of its segments.
@@ -81,7 +84,7 @@ namespace Tron.Game.Scripting
                         isGameOver = true;
 
                         Actor message = new Actor();
-                        message.SetText("Game Over!");
+                        message.SetText("Player 2 Wins!!!");
                         message.SetPosition(position);
                         cast.AddActor("messages", message);
                     }

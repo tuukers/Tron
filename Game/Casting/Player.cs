@@ -11,6 +11,7 @@ namespace Tron.Game.Casting
     public class Player : Actor
     {
         private List<Actor> segments = new List<Actor>();
+        private Color color1 = Constants.YELLOW;
 
         /// <summary>
         /// Constructs a new instance of a Snake.
@@ -51,7 +52,7 @@ namespace Tron.Game.Casting
         /// Grows the snake's tail by the given number of segments.
         /// </summary>
         /// <param name="numberOfSegments">The number of segments to grow.</param>
-        public void GrowTail(int numberOfSegments)
+        public void GrowTail(int numberOfSegments,int player_num)
         {
             for (int i = 0; i < numberOfSegments; i++)
             {
@@ -60,12 +61,34 @@ namespace Tron.Game.Casting
                 Point offset = velocity.Reverse();
                 Point position = tail.GetPosition().Add(offset);
 
+                
+
                 Actor segment = new Actor();
                 segment.SetPosition(position);
                 segment.SetVelocity(velocity);
                 segment.SetText("#");
-                segment.SetColor(Constants.GREEN);
+                segment.SetColor(GetPlayerColor(player_num));
                 segments.Add(segment);
+
+                
+            }
+        }
+
+        public Color GetPlayerColor(int player_num)
+        {
+            if (player_num==1)
+            {
+                Color color = Constants.YELLOW;
+                return color;
+            }
+            else if (player_num==2)
+            {
+                Color color = Constants.BLUE;
+                return color;
+            }
+            else
+            {
+                return Constants.WHITE;
             }
         }
 
@@ -108,13 +131,13 @@ namespace Tron.Game.Casting
                 Point position = new Point(x , y - i * Constants.CELL_SIZE);
                 Point velocity = new Point(0,1 * Constants.CELL_SIZE);
                 string text = i == 0 ? "8" : "#";
-                Color color = i == 0 ? Constants.YELLOW : Constants.GREEN;
+                
 
                 Actor segment = new Actor();
                 segment.SetPosition(position);
                 segment.SetVelocity(velocity);
                 segment.SetText(text);
-                segment.SetColor(color);
+                segment.SetColor(GetPlayerColor(player_num));
                 segments.Add(segment);
             }
         }
