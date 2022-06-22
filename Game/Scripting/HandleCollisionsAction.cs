@@ -142,6 +142,7 @@ namespace Tron.Game.Scripting
                         Actor message = new Actor();
                         message.SetText("Tie Game!!!");
                         message.SetPosition(position);
+                        message.SetColor(Constants.GREEN);
                         cast.AddActor("messages", message);
                     }
                     else
@@ -149,6 +150,7 @@ namespace Tron.Game.Scripting
                         Actor message = new Actor();
                         message.SetText("Player 1 Wins!!");
                         message.SetPosition(position);
+                        message.SetColor(player1.GetPlayerColor(1));
                         cast.AddActor("messages", message);
                     }
                 }
@@ -157,6 +159,7 @@ namespace Tron.Game.Scripting
                     Actor message = new Actor();
                     message.SetText("Player 2 Wins!!");
                     message.SetPosition(position);
+                    message.SetColor(player2.GetPlayerColor(2));
                     cast.AddActor("messages", message);
                 }
                 else
