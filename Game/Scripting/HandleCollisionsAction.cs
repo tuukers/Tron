@@ -126,7 +126,7 @@ namespace Tron.Game.Scripting
                 List<Actor> segments2 = player2.GetSegments();
 
                 // create a "game over" message
-                int x = Constants.MAX_X / 2;
+                int x = Constants.MAX_X / 2- 3*Constants.CELL_SIZE;
                 int y = Constants.MAX_Y / 2;
                 Point position = new Point(x, y);
 
