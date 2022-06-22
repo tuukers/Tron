@@ -144,6 +144,15 @@ namespace Tron.Game.Scripting
                         message.SetPosition(position);
                         message.SetColor(Constants.GREEN);
                         cast.AddActor("messages", message);
+                        // Turn both players white
+                        foreach (Actor segment in segments1)
+                        {
+                            segment.SetColor(Constants.WHITE);
+                        }
+                        foreach (Actor segment in segments2)
+                        {
+                            segment.SetColor(Constants.WHITE);
+                        }
                     }
                     else
                     {
@@ -152,6 +161,11 @@ namespace Tron.Game.Scripting
                         message.SetPosition(position);
                         message.SetColor(player1.GetPlayerColor(1));
                         cast.AddActor("messages", message);
+                        // Make player 2 turn white
+                        foreach (Actor segment in segments2)
+                        {
+                            segment.SetColor(Constants.WHITE);
+                        }
                     }
                 }
                 else if(player2Win == true)
@@ -161,6 +175,11 @@ namespace Tron.Game.Scripting
                     message.SetPosition(position);
                     message.SetColor(player2.GetPlayerColor(2));
                     cast.AddActor("messages", message);
+                    // Make player 1 turn white
+                    foreach (Actor segment in segments1)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
                 }
                 else
                 {
@@ -168,16 +187,6 @@ namespace Tron.Game.Scripting
                     message.SetText("Error no winner");
                     message.SetPosition(position);
                     cast.AddActor("messages", message);
-                }
-
-                // make everything white
-                foreach (Actor segment in segments1)
-                {
-                    segment.SetColor(Constants.WHITE);
-                }
-                foreach (Actor segment in segments2)
-                {
-                    segment.SetColor(Constants.WHITE);
                 }
             }
         }
